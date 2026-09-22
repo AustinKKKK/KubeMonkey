@@ -1,3 +1,5 @@
+[한국어](./README.ko.md) | English
+
 # KubeMonkey
 
 A minimal [Chaos Monkey](https://netflix.github.io/chaosmonkey/) clone for Kubernetes, written in Go with [client-go](https://github.com/kubernetes/client-go). It randomly kills pods in a running cluster to verify that your workloads actually self-heal the way Kubernetes promises they will.
@@ -5,8 +7,6 @@ A minimal [Chaos Monkey](https://netflix.github.io/chaosmonkey/) clone for Kuber
 ## Why
 
 "The deployment has 5 replicas, so it's resilient" is an assumption until you've actually watched it recover from a failure. KubeMonkey forces that recovery to happen on a schedule, so you get to see self-healing instead of trusting it.
-
-![KubeMonkey Architecture](./kubemonkey-architecture.svg)
 
 ## How it works
 
@@ -31,6 +31,10 @@ allowedNamespaces := map[string]bool{
 ```
 
 Anything not on the list is left alone by default. Safer default, less to maintain.
+
+## Architecture
+
+![KubeMonkey Architecture](./kubemonkey-architecture.svg)
 
 ## Usage
 
@@ -74,4 +78,3 @@ Killed: default / nginx-69b9cdbbdd-h4xgc
 - Go
 - [client-go](https://github.com/kubernetes/client-go) — official Kubernetes Go client
 - [kind](https://kind.sigs.k8s.io/) — local cluster for development/testing
-# KubeMonkey
